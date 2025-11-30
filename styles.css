@@ -4,19 +4,10 @@ body {
   background-repeat: no-repeat;
   z-index: 0;
   min-height: 100vh;
-  max-height: 200vh;
 }
 @font-face {
   font-family: Alkatra;
   src: url("Alkatra.ttf");
-}
-.row {
-  display: grid;
-  grid-template-rows: 1fr auto 1fr;
-}
-.column {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
 }
 .box {
   background: #ffffff88;
@@ -61,7 +52,11 @@ div.header {
 }
 div.content {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3.3fr 0.7fr;
+}
+div.idk {
+  width: 88%;
+  margin-left: 8vw;
 }
 img.magritte {
   background-color: #ffffff88;
@@ -110,17 +105,15 @@ div.little {
   text-align: center;
 }
 p {
-  width: 50vw;
-  margin: 2vw 0;
+  margin: 1.5vw 0;
 }
 div.ratio {
   box-sizing: border-box;
-  margin: 2%;
 }
 iframe {
-  width: 79%;
+  width: 76%;
   height: 49vh;
-  margin-left: 12%;
+  margin-left: 9%;
 }
 img.photo {
   width: 30vw;
