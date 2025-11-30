@@ -98,7 +98,7 @@ div.wall {
 img.art {
   width: 20vw;
   border-radius: 5%;
-  margin: 20px 0;
+  margin: 1vw 0;
   transition: scale .25s;
 }
 a.art {
@@ -207,4 +207,4 @@ img.photo {
   60% {transform:translate(2px,2px)}
   80% {transform:translate(2px,-2px)}
   100% {transform:translate(0)}
-}
+} 
