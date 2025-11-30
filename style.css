@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkatra:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&display=swap');
+body {
+  background-image: url(cherry-blossom.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  font-family: "Alkatra", system-ui;
+  font-size: 0.8rem;
+  font-weight: lighter;
+  margin-top: 15px;
+}
+.box {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 6px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+div.header {
+  background-image: linear-gradient(90deg, #ffe3e7, #d15066);
+  position: sticky;
+  top: 5px;
+  border-radius: 10px;
+  width: 100%;
+  padding-left: 5px;
+  z-index: 1;
+}
+div.header img {
+  float: inline-start;
+  position: relative;
+  left: 0.8rem;
+  top: 0.2rem;
+  cursor: pointer;
+}
+div.header h1 {
+  font-family: 'Libre Caslon Display';
+  font-size: 3.5rem;
+  margin: 0;
+  margin-left: 90px;
+}
+div.main {
+  width: 100%;
+  z-index: -1;
+}
+div.content {
+  width: 70%;
+  position: relative;
+  display: inline-block;
+}
+div.link {
+  font-size: 1rem;
+  margin: 0.25em 1em;
+}
+div.link a {
+  color: #000;
+  width: 100%;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+div.link a:hover {
+  color: #0000ff;
+  text-decoration: underline;
+}
+div.link a:active {
+  color: red;
+}
+div.heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 8px 20px;
+}
+img.pink-box {
+  display: block;
+  width: 75%;
+}
+div.otp {
+  position: absolute;
+  top: 12%;
+  left: 13%;
+  rotate: 4deg;
+  z-index: 0;
+}
+div.text {
+  position: absolute;
+  left: 21%;
+  bottom: 22%;
+  width: 25vw;
+  rotate: -2deg;
+  z-index: 0;
+}
+div.menu {
+  position: absolute;
+  left: 59.6%;
+  top: 21.2%;
+  width: 3.5%;
+}
+div.ql {
+  background: linear-gradient(-45deg,#6d3ab4cc 0%, #fdaf1dcc 40%, #d15066 100%);
+  background-repeat: no-repeat;
+  padding: 12px;
+}
+div.happening-at-soa {
+  background: radial-gradient(circle,#b8a6ffcc 0%, #ff2b99d9 100%);
+  padding: 10px 5px;
+}
+div.line {
+  background-color: #000000cc;
+  border: none;
+  border-radius: 6px;
+  width: 100%;
+  height: 6px;
+  margin: 8px 0;
+}
+div.side {
+  width: 22%;
+  position: absolute;
+  right: 23%;
+  top: 16%;
+}
+div.sidebar {
+  overflow-x: hidden;
+  position: absolute;
+  right: 10px;
+  width: 0;
+  height: auto;
+  transition: width 0.15s;
+  margin-top: 15px;
+}
+div.nav {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 4px 0;
+  margin-bottom: 20px;
+}
+div.wiki {
+  background-color: #ff7c01cc;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+div.wiki p {
+  margin: 10px;
+  margin-bottom: 15px;
+}
+div.page-info {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 10px;
+}
+div.page-info button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin-bottom: 7px;
+  transition: opacity 0.15s;
+}
+div.page-info button:hover {
+  opacity: 0.8;
+}
+div.page-info button:active {
+  opacity: 0.5;
+}
+div.page-info p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+.left {
+  padding-left: 15px;
+}
+div.community-bulletin-board {
+  width: 100%;
+}
+div.post {
+  width: 30%;
+}
+img.sticky {
+  display: inline-block;
+  z-index: 0;
+}
+div.post-text {
+  overflow-y: scroll;
+  position: relative;
+  left: 10%;
+  bottom: 34%;
+  width: 66%;
+  height: 25%;
+  padding-right: 16px;
+}
+div.no-overflow {
+  overflow-y: visible;
+}
+div.calendar {
+  background: linear-gradient(150deg, #c12fffe6 16%, #00d4ffcc 100%);
+  width: 29%;
+  margin: 0 20px;
+  padding: 15px;
+}
+div.calendar span {
+  font-weight: bold;
+}
+div.newsletter {
+  background: linear-gradient(-150deg,#c12fffe6 16%, #00d4ffcc 100%);
+  width: 30%;
+  padding: 0 15px;
+}
+div.footer {
+  background-image: linear-gradient(45deg, #ffe3e7, #d15066);
+  border-radius: 10px;
+  padding: 18px 36px;
+}
+div.imprint {
+  margin-right: 15px;
+}
+u {
+  font-family: "Libre Caslon Display", serif;
+  font-weight: bolder;
+}

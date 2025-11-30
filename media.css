@@ -1,0 +1,89 @@
+@media screen and (max-width: 700px) {
+  body {
+    margin: 5px;
+    font-size: 0.5rem;
+  }
+  div.header h1 {
+    font-size: 2rem;
+    margin-left: 3rem;
+  }
+  div.header img {
+    width: 2rem;
+    height: 2rem;
+    left: 0.3rem;
+  }
+  div.text {
+    width: 70%;
+    overflow-y: scroll;
+    height: 20%;
+    left: 40%;
+  }
+  div.otp {
+    left: 20%;
+    top: 11%;
+  }
+  div.menu {
+    width: 8%;
+    left: 111%;
+  }
+  div.line {
+    height: 3px;
+    margin: 4px 0;
+  }
+  div.sidebar {
+    z-index: 1;
+    height: 80%;
+  }
+  div.heading {
+    font-size: 0.6rem;
+  }
+  div.link {
+    font-size: 0.5rem;
+  }
+  div.box {
+    width: 100%;
+  }
+  img.pink-box {
+    width: 140%;
+  }
+  div.side {
+    width: 34%;
+    right: 10%;
+    top: 99%;
+  }
+  div.community-bulletin-board {
+    flex-direction: column;
+  }
+  img.sticky {
+    width: 75%;
+  }
+  div.post {
+    width: 70%;
+  }
+  div.post-text {
+    background: linear-gradient(-45deg,#6d3ab4cc 0%, #fdaf1dcc 40%, #d15066 100%);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 6px;
+    overflow-y: scroll;
+    top: 130%;
+    left: 5%;
+    width: 60%;
+    height: 25%;
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+  img.sticky {
+    display: none;
+  }
+  u {
+    margin-bottom: 0;
+  }
+  div.calendar {
+    margin-bottom: 10px;
+  }
+  div.newsletter {
+    width: 80%;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+}
