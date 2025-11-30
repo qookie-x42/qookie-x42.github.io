@@ -112,6 +112,13 @@ img.painting {
   width: 30vw;
   margin: 2vw 2vw 0.3vw;
 }
+.zoomable {
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+.zoomable:hover {
+  transform: scale(1.05);
+}
 div.little {
   color: #777777cc;
   font-size: 0.9vw;
@@ -132,6 +139,34 @@ img.photo {
   width: 30vw;
   margin-top: 4vh;
   margin-left: 2vw;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.overlay img {
+  max-width: 80%;
+  max-height: 80%;
+  transform: scale(0.5);
+  transition: transform 0.3s ease;
+}
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+}
+.overlay.active img {
+  transform: scale(1.2);
 }
 @keyframes image {
   0% {

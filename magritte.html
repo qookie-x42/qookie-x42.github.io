@@ -6,6 +6,7 @@
   <title>Biography</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="media.css">
+  <script src="script.js"></script>
   <link rel="icon" href="logo.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -48,8 +49,8 @@
       </div>
     </div>
     <div class="side">
-      <img src="photo-rene-magritte.jpg" class="painting">
-      <img src="magritte-image.webp" class="photo">
+      <img src="photo-rene-magritte.jpg" class="painting zoomable">
+      <img src="magritte-image.webp" class="photo zoomable">
     </div>
   </div>
   <div class="idk">
@@ -98,6 +99,8 @@
       Magritte's masterpieces <a href="son-of-man.html">The Son of Man</a> and <a href="https://www.renemagritte.org/the-treachery-of-images.jsp">The Treachery of Images</a> 
       become the iconic images of the Surrealism movement. Magritte brought an entirely new way of looking at art, with the paintings, as well as some of the sculptures which he created, during the course of his career.</p>
   </div>
-  <div class="footer"></div>
+  <div class="overlay" id="overlay">
+    <img id="overlay-img">
+  </div>
 </body>
 </html>
