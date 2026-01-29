@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	}
 	function createPainting(item) {
 		const storedItem = document.createElement("div");
-		storedItem.className = "box p-art";
+		storedItem.className = "box saved";
 		storedItem.style.width = "85%";
 
 		const storedImg = document.createElement("img");

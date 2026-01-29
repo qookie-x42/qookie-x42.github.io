@@ -233,6 +233,19 @@ button.next{
 button.next{
   font-size: 2.5vw;
 }
+div#saved{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+	gap: 1.5rem;
+}
+div.saved{
+	display: flex;
+	flex-direction: column;
+  width: 100%;
+	align-items: center;
+  background: transparent;
+  border: none;
+}
 @keyframes image {
   0% {
     transform:scale(1);
