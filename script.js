@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const overlay = document.querySelector("#overlay");
 	const overlayImg = document.querySelector("#overlay-img");
-
+	const painting = document.querySelectorAll("div.p-art");
 	document.addEventListener("click", zoomImage);
 	function zoomImage(e) {
 		if (e.target.classList.contains("zoomable")) {
@@ -25,17 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelectorAll(".heart").forEach(button => {
 		button.addEventListener("click", () => savePainting(button));
 	});
-	/* document.querySelectorAll(".p-art").forEach(art => {
-		const img = art.querySelector("img").src;
-		const button = art.querySelector(".heart");
 
-		if (isPaintingSaved(img)) {
+	painting.forEach(item => {
+		const img = item.querySelector("img").src;
+		const button = item.querySelector(".heart");
+
+		if (checkPainting(img)) {
 			setHeartActive(button);
-		} 
+		}
 		else {
 			setHeartInactive(button);
 		}
-	}); */
+	});
+
+	function checkPainting(img) {
+		let savedImg = JSON.parse(localStorage.getItem("likedPaintings")) || [];
+		return savedImg.some(item => item.img === img);
+	}
+
 	function savePainting(button) {
 		const art = button.closest(".p-art");
 		const img = art.querySelector("img").src;
@@ -82,10 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
 		}
 		loadImg.forEach(item => page.appendChild(createPainting(item)));
 	}
-	function createPainting() {
+	function createPainting(item) {
 		const storedItem = document.createElement("div");
 		storedItem.className = "box p-art";
-		storedItem.style.width = "80%"
+		storedItem.style.width = "85%";
 
 		const storedImg = document.createElement("img");
 		storedImg.className = "p-art zoomable";
@@ -95,7 +102,16 @@ document.addEventListener("DOMContentLoaded", () => {
 		storedText.className = "text p-text";
 		storedText.innerText = item.title;
 
-		storedItem.appendChild(storedImg, storedText);
+		const storedButton = document.createElement("button");
+		storedButton.className = "heart";
+		const storedHeart = document.createElement("i");
+		storedHeart.className = "fa fa-heart";
+		storedHeart.style.color = "#f00";
+
+		storedButton.appendChild(storedHeart);
+		storedItem.appendChild(storedImg);
+		storedText.appendChild(storedButton);
+		storedItem.appendChild(storedText);
 		return storedItem;
 	}
 });

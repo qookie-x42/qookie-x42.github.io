@@ -117,7 +117,7 @@ img.painting {
   transition: transform 0.3s ease;
 }
 .zoomable:hover {
-  transform: scale(1.05);
+  transform: scale(1.018);
 }
 div.little {
   color: #777777cc;
@@ -170,9 +170,9 @@ img.photo {
 }
 div.c {
   display: grid;
-  width: 100%;
+  width: 97.5%;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  margin-left: 2vw;
+  margin-left: 2.5vw;
 }
 div.column {
   width: 80%;
@@ -185,6 +185,16 @@ a.p-btn{
   margin-top: 1vw;
   font-size: 1.8vw;
 }
+button.s-btn{
+  position: absolute;
+  top: 1.5vw;
+  right: 2vw;
+  background-color: transparent;
+  border: none;
+  width: 11vw;
+  height: 2vw;
+  font-size: 1.5vw;
+}
 div.p-art {
   width: 100%;
   margin-top: 2vw;
@@ -195,7 +205,7 @@ img.p-art {
   border-radius: 0.5vw;
 }
 div.p-text {
-  font-size: 1.1vw;
+  font-size: 1.05vw;
   text-align: center;
 }
 button.heart {
@@ -212,6 +222,16 @@ button.heart:hover{
 }
 button.heart i{
   font-size: 1vw;
+  margin-left: 1.8vw;
+}
+button.next{
+  width: 3vw;
+  height: 5vw;
+  background-color: transparent;
+  border: none;
+}
+button.next{
+  font-size: 2.5vw;
 }
 @keyframes image {
   0% {
@@ -220,7 +240,7 @@ button.heart i{
     box-shadow:0 0 0 transparent;
   }
   100% {
-    transform:scale(1.04);
+    transform:scale(1.03);
     transform-origin: 50% 100%;
     box-shadow:0 0 18px rgba(0, 0, 0, 0.7);
   }
