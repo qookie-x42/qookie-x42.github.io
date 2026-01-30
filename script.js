@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			if (overlayImg.src.includes("photo-rene-magritte.jpg")) {
 				overlayImg.src = "walter-white.jpg";
 			}
-			else if (overlayImg.src.includes("magritte-image.webp")) {
+			else if (overlayImg.src.includes("magritte-image.jpg")) {
 				overlayImg.src = "jochen.jpg";
 			}
 		}
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const img = art.querySelector("img").src;
 		const title = art.querySelector(".p-text").innerText;
 		let savedImg = JSON.parse(localStorage.getItem("likedPaintings")) || [];
-		const exists = savedImg.find(item => item.img === img);
+		const exists = savedImg.find(item => item.img == img);
 
 		if (!exists) {
 			const id = self.crypto.randomUUID();
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			setHeartActive(button)
 		}
 		else {
-			savedImg = savedImg.filter(item => item.img !== img);
+			savedImg = savedImg.filter(item => item.img != img);
 			setHeartInactive(button)
 		}
 		localStorage.setItem("likedPaintings", JSON.stringify(savedImg));
