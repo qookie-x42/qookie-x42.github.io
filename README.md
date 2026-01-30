@@ -1,7 +1,7 @@
 # René Magritte Gallery
 
 This project shows some intriguing artworks by the Belgian surrealist René Magritte.  
-          > qookie-x42.github.io <
+           https://www.qookie-x42.github.io
 
 Most paintings that are listed under "Paintings", are from: https://www.renemagritte.org/rene-magritte-paintings.jsp
 
