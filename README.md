@@ -3,7 +3,7 @@
 This project shows some intriguing artworks by the Belgian surrealist René Magritte.  
           > qookie-x42.github.io <
 
-Most paintings that are shown on the "Paintings" listing, are from: https://www.renemagritte.org/rene-magritte-paintings.jsp
+Most paintings that are listed under "Paintings", are from: https://www.renemagritte.org/rene-magritte-paintings.jsp
 
 I had to compensate for the double paintings, so I searched for other paintings made by René Magritte:
 - The Difficult Crossing:  https://fr.pinterest.com/pin/449374869055551052/
