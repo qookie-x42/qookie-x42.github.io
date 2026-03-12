@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>René Magritte Gallery</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header box">
+		<a href="https://qookie-x42.github.io/"><img src="logo.png" class="logo"></a>
+		<h1 class="heading">Tickets</h1>
+	</div>
+  <div class="c">
+    <div id="output" class="text ticket"></div>
+  </div>
+  <script>
+    const tickets = JSON.parse(localStorage.getItem("tickets"));
+    const output = document.getElementById("output");
+    if (tickets) {
+    tickets.forEach(item => {
+      let i = 0;
+      const ticket = document.createElement("div");
+      ticket.classList = "box ticket";
+      ticket.style.padding = "1vw";
+
+      const type = document.createElement("em");
+      type.classList = "quote";
+      type.innerText = JSON.parse(localStorage.getItem("type"))[i];
+      i++;
+      ticket.appendChild(type);
+
+      const name = document.createElement("div");
+      name.innerText = `${item.fname} ${item.lname}, ${item.age} years old`;
+      ticket.appendChild(name);
+
+      const address = document.createElement("div");
+      address.innerText = `${item.address}, ${item.country}`;
+      ticket.appendChild(address);
+
+      const date = localStorage.getItem("date").split("-");
+      const dateEl = document.createElement("div");
+      dateEl.innerText = `${date[2]}/${date[1]}/${date[0]}`;
+      ticket.appendChild(dateEl);
+
+      const email = document.createElement("div");
+      email.innerText = `${item.email}`;
+      ticket.appendChild(email);
+
+      output.appendChild(ticket);
+      });
+    } else {
+      output.innerText = "No tickets found";
+    }
+  </script>
+	<div class="overlay" id="overlay">
+		<img id="overlay-img">
+	</div>
+</body>
+</html>

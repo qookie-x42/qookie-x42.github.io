@@ -246,6 +246,20 @@ div.saved{
   background: transparent;
   border: none;
 }
+div#calendar{
+  margin: 0 2vw 1vw 2vw;
+  height: 710px;
+}
+.fc-view-harness{
+  height: 650px;
+}
+.check{
+  margin: 0 1.5vw;
+}
+div.ticket{
+  margin: 2vw;
+  width: 85%;
+}
 @keyframes image {
   0% {
     transform:scale(1);

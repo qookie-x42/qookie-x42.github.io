@@ -114,4 +114,34 @@ document.addEventListener("DOMContentLoaded", () => {
 		storedItem.appendChild(storedText);
 		return storedItem;
 	}
+	if (window.location.pathname.includes("ticket.html")) {
+		const datetime = new Date();
+		const fulldate = datetime.toJSON();
+		const dateString = fulldate.substring(0,10);
+		const calendarEl = document.getElementById("calendar");
+		const calendar = new FullCalendar.Calendar(calendarEl, {
+			initialView: "dayGridMonth",
+			selectable: true,
+
+			dateClick: function (info) {
+				alert("Du hast " + info.dateStr + " ausgewählt");
+				let date = localStorage.setItem("date", info.dateStr);
+			},
+			events: [
+				{
+					title: "Tickets verfügbar",
+					start: dateString,
+					end: "2026-03-19",
+					color: "#ff79d3"
+				},
+				{
+					title: "Ausverkauft",
+					start: "2026-03-20",
+					end: "2026-03-23",
+					color: "#8f2020"
+				}
+			]
+		});
+		calendar.render();
+	}
 });

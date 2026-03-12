@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>René Magritte Gallery</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+	<link rel="icon" href="logo.png">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div class="header box">
+		<a href="https://qookie-x42.github.io/"><img src="logo.png" class="logo"></a>
+		<h1 class="heading">A Gallery Full of Magic</h1>
+	</div>
+	<div class="content">
+		<div class="main">
+			<h1 style="margin-top:2vh; font-size:2vw;">Get tickets</h1>
+			<em class="quote">Select a date for your visit</em>
+		</div>
+	</div>
+	<div id="calendar" class="text"></div>
+	<div>
+		<span class="check"> Adult
+			<button onclick="loadForm('adult')">+</button>
+		</span>
+		<span class="check"> Senior
+			<button onclick="loadForm('senior')">+</button>
+		</span>
+		<span class="check"> Child
+			<button onclick="loadForm('child')">+</button>
+		</span>
+		<span class="check"> Student
+			<button onclick="loadForm('student')">+</button>
+		</span>
+	</div>
+	<div id="personalData"></div>
+	<div class="overlay" id="overlay">
+		<img id="overlay-img">
+	</div>
+	<script>
+		let x = 0;
+		let type = [];
+		function setMin(info) {
+			if (info == "adult" || info == "student") {
+				return 18;
+			} else if (info == "senior") {
+				return 62;
+			} else if (info == "child") {
+				return 3;
+			}
+		}
+		function setMax(info) {
+			if (info == "adult") {
+				return 62;
+			} else if (info == "senior") {
+				return 122;
+			} else if (info == "child") {
+				return 17;
+			} else if (info == "student") {
+				return 25;
+			}
+		}
+		function ticketType(info) {
+			if (info == "adult") {
+				type.push("Adult:");
+				return "Adult:";
+			} else if (info == "senior") {
+				type.push("Senior:");
+				return "Senior:";
+			} else if (info == "child") {
+				type.push("Child:");
+				return "Child:";
+			} else if (info == "student") {
+				type.push("Student:");
+				return "Student:";
+			}
+		}
+		function removeTicket(e) {
+			e.target.parentElement.remove();
+		}
+		function loadForm(info) {
+			const personalData = document.getElementById("personalData");
+			const form = document.createElement("form");
+			form.style.margin = "2vw";
+			form.innerHTML = `<em class="quote">${ticketType(info)}</em> <button onclick="removeTicket()">x</button>
+				<div style="margin:1vw">
+					<label style="margin-left:1vw" for="fname">First name:</label>
+					<input type="text" name="fname" />
+					<label style="margin-left:1vw" for="lname">Last name:</label>
+					<input type="text" name="lname" />
+				</div>
+				<div>
+					<label style="margin-left:1vw" for="age">Age:</label>
+					<input type="number" name="age" min="${setMin(info)}" max="${setMax(info)}"/>
+					<label style="margin-left:1vw" for="address">Address:</label>
+					<input type="text" name="address" />
+					<label style="margin-left:1vw" for="country">Country:</label>
+					<input type="text" name="country" />
+				</div>
+				<div style="margin:1vw">
+					<label style="margin-left:1vw" for="email">Email:</label>
+					<input type="text" name="email" />
+					<input style="margin-left:1vw" type="submit"/>
+				</div>`;
+				form.addEventListener("submit", function(event) {
+    			event.preventDefault();
+    			saveTickets();
+					const continueB = document.createElement("button");
+					continueB.innerHTML = `<a href="check.html">Continue</a>`;
+					form.appendChild(continueB);
+				});
+			personalData.appendChild(form);
+			function saveTickets() {
+    		const forms = document.querySelectorAll("#personalData form");
+    		let tickets = [];
+    		forms.forEach(form => {
+        	const formData = new FormData(form);
+        	let person = {};
+        	for (const [key, value] of formData.entries()) {
+          	person[key] = value;
+					}
+        	tickets.push(person);
+    		});
+				localStorage.setItem("type", JSON.stringify(type));
+    		localStorage.setItem("tickets", JSON.stringify(tickets));
+			}
+		} window.addEventListener("load", () => localStorage.clear());
+	</script>
+</body>
+</html>
